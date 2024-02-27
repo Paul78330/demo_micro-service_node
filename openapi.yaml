@@ -1,0 +1,89 @@
+openapi: 3.1.0
+info:
+  title: Mon Application
+  version: 1.0.0
+paths:
+  /service-albums:
+    post:
+      summary: Création d'un album
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+      responses:
+        '200':
+          description: Album créé avec succès
+    get:
+      summary: Affichage des albums
+      responses:
+        '200':
+          description: Liste des albums
+  /service-auth:
+    post:
+      summary: Inscription ou connexion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Utilisateur inscrit ou connecté avec succès
+    delete:
+      summary: Déconnexion
+      responses:
+        '200':
+          description: Utilisateur déconnecté avec succès
+  /service-comments:
+    post:
+      summary: Ajouter un commentaire
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postId:
+                  type: string
+                userId:
+                  type: string
+                text:
+                  type: string
+      responses:
+        '200':
+          description: Commentaire ajouté avec succès
+    get:
+      summary: Afficher les commentaires
+      responses:
+        '200':
+          description: Liste des commentaires
+    # ... autres chemins ...
+  /service-templates/{templateName}:
+    get:
+      summary: Récupérer un template
+      parameters:
+        - in: path
+          name: templateName
+          required: true
+          schema:
+            type: string
+          description: Le nom du template à récupérer
+      responses:
+        '200':
+          description: Template récupéré avec succès
+          content:
+            text/html:
+              schema:
+                type: string

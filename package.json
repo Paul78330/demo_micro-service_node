@@ -1,0 +1,18 @@
+{
+  "name": "micro-services",
+  "version": "1.0.0",
+  "description": "micro-service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop ecosystem.config.js"
+  },
+  "author": "paul-gaultier",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "pm2": "^5.3.1",
+    "swagger-ui-dist": "^5.11.8"
+  }
+}
