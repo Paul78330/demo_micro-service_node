@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Commentaires</title>
+</head>
+<body>
+  <h1>Commentaires</h1>
+
+  <% comments.forEach(function(comment) { %>
+    <div>
+      <h2><%= comment.text %></h2>
+      <p>Posté par l'utilisateur <%= comment.userId %> sur le post <%= comment.postId %></p>
+    </div>
+  <% }); %>
+
+</body>
+</html>
